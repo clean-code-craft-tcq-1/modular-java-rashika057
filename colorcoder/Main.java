@@ -1,6 +1,11 @@
-package paircolorcoder;
 
-public class ColorCoding {
+
+import paircolorcoder.ColorPair;
+import paircolorcoder.ColorPairService;
+import paircolorcoder.MajorColor;
+import paircolorcoder.MinorColor;
+
+public class Main {
 	
 	static final int TOTAL_PAIRS = 25;
 	public static void main(String[] args) {

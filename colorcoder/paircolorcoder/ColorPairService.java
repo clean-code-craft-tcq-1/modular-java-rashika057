@@ -6,7 +6,7 @@ public class ColorPairService {
     
     static final int NUMBER_OF_MINOR_COLORS = MinorColor.values().length;
 
-    static ColorPair getColorFromNumber(int pairNumber) {
+    public static ColorPair getColorFromNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
         MajorColor majorColor = 
         		(MajorColor) ColorService.fromIndex(zeroBasedPairNumber / NUMBER_OF_MAJOR_COLORS, MajorColor.values());
@@ -19,7 +19,7 @@ public class ColorPairService {
         return pair.getMajor().getIndex() * NUMBER_OF_MINOR_COLORS + pair.getMinor().getIndex() + 1;
     }
 
-    static void testNumberToPair(int pairNumber,
+    public static void testNumberToPair(int pairNumber,
     		ColorPair expectedPair)
     {
         ColorPair colorPair = getColorFromNumber(pairNumber);
@@ -28,7 +28,7 @@ public class ColorPairService {
         assert(colorPair.getMinor() == expectedPair.getMinor());
     }
 
-    static void testPairToNumber(
+    public static void testPairToNumber(
     		ColorPair pair,
         int expectedNumber)
     {
