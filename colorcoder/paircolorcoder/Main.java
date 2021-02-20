@@ -1,6 +1,6 @@
 package paircolorcoder;
 
-public class ColorCoding {
+public class Main {
 	
 	static final int TOTAL_PAIRS = 25;
 	public static void main(String[] args) {
