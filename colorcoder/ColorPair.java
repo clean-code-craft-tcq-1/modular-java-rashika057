@@ -1,5 +1,4 @@
-package paircolorcoder;
-
+package colorcoder;
 public class ColorPair {
     private MajorColor majorColor;
     private MinorColor minorColor;

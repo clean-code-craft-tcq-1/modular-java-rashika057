@@ -1,5 +1,4 @@
-package paircolorcoder;
-
+package colorcoder;
 public class ColorService {
 	public static Color fromIndex(int index,Color[] values) {
         for(Color color: values) {

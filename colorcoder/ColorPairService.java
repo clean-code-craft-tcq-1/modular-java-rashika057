@@ -1,5 +1,4 @@
-package paircolorcoder;
-
+package colorcoder;
 public class ColorPairService {	
 	
     static final int NUMBER_OF_MAJOR_COLORS = MajorColor.values().length;

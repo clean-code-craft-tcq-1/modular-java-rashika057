@@ -1,5 +1,4 @@
-package paircolorcoder;
-
+package colorcoder;
 public enum MajorColor implements Color {
 	
     WHITE(0,"White"),
