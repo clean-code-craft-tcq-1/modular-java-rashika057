@@ -1,16 +1,19 @@
 package colorcoder;
 public final class ColorPairService {	
-	
+
     static final int NUMBER_OF_MAJOR_COLORS = MajorColor.values().length;
     
     static final int NUMBER_OF_MINOR_COLORS = MinorColor.values().length;
 
     public static ColorPair getColorFromNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
-        MajorColor majorColor = 
-        		(MajorColor) ColorService.fromIndex(zeroBasedPairNumber / NUMBER_OF_MAJOR_COLORS, MajorColor.values());
-        MinorColor minorColor =
-        		(MinorColor) ColorService.fromIndex(zeroBasedPairNumber % NUMBER_OF_MAJOR_COLORS, MinorColor.values());
+        MajorColor majorColor = null;
+        MinorColor minorColor = null;
+		try {
+			majorColor = MajorColor.values()[zeroBasedPairNumber / NUMBER_OF_MAJOR_COLORS];
+			minorColor = MinorColor.values()[zeroBasedPairNumber % NUMBER_OF_MAJOR_COLORS];
+		} catch (ArrayIndexOutOfBoundsException e) {			
+		}		
         return new ColorPair(majorColor, minorColor);
     }
     
@@ -34,5 +37,5 @@ public final class ColorPairService {
         int pairNumber = getNumberFromColor(pair);
         System.out.println("Got pair number " + pairNumber);
         assert(pairNumber == expectedNumber);
-    }       
+    }      
 }
