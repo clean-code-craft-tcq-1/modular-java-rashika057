@@ -1,5 +1,5 @@
 package colorcoder;
-public enum MinorColor implements Color {
+public enum MinorColor implements HasIndex {
 
     BLUE(0,"Blue"),
     ORANGE(1,"Orange"),
@@ -21,5 +21,9 @@ public enum MinorColor implements Color {
     
     public String getDisplayName() {
 		return displayName;
-	}    
+	}  
+    
+    public static MinorColor fromIndex(int index) {
+        return new EnumEnhancer<>(values()).lookup(index);
+      }
 }

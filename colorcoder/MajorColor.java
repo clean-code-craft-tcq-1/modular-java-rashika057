@@ -1,5 +1,5 @@
 package colorcoder;
-public enum MajorColor implements Color {
+public enum MajorColor implements HasIndex {
 	
     WHITE(0,"White"),
     RED(1,"Red"),
@@ -21,5 +21,9 @@ public enum MajorColor implements Color {
     
     public String getDisplayName() {
         return this.displayName;
-    }    
+    }
+    
+    public static MajorColor fromIndex(int index) {
+        return new EnumEnhancer<>(values()).lookup(index);
+      }	
 }

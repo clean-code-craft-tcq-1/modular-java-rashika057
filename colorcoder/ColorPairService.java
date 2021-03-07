@@ -1,5 +1,5 @@
 package colorcoder;
-public class ColorPairService {	
+public final class ColorPairService {	
 	
     static final int NUMBER_OF_MAJOR_COLORS = MajorColor.values().length;
     
@@ -8,9 +8,9 @@ public class ColorPairService {
     public static ColorPair getColorFromNumber(int pairNumber) {
         int zeroBasedPairNumber = pairNumber - 1;
         MajorColor majorColor = 
-        		(MajorColor) ColorService.fromIndex(zeroBasedPairNumber / NUMBER_OF_MAJOR_COLORS, MajorColor.values());
+        		MajorColor.fromIndex(zeroBasedPairNumber / NUMBER_OF_MAJOR_COLORS);
         MinorColor minorColor =
-        		(MinorColor) ColorService.fromIndex(zeroBasedPairNumber % NUMBER_OF_MAJOR_COLORS, MinorColor.values());
+        		MinorColor.fromIndex(zeroBasedPairNumber % NUMBER_OF_MAJOR_COLORS);
         return new ColorPair(majorColor, minorColor);
     }
     

@@ -16,6 +16,13 @@ public class ColorPair {
     }     
     
     public String toString() {
-    	return  MajorColor.values()[majorColor.getIndex()].getDisplayName()+ " " + MinorColor.values()[minorColor.getIndex()].getDisplayName();       
+    	String colorPairName;
+    	try {
+    	colorPairName = MajorColor.values()[majorColor.getIndex()].getDisplayName()+ " " + MinorColor.values()[minorColor.getIndex()].getDisplayName();   
+    	}
+    	catch(NullPointerException e) {
+    		return "";
+    	}
+    	return  colorPairName;       
     }
 }
