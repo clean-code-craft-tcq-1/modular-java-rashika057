@@ -3,10 +3,6 @@ package colorcoder;
 import java.util.HashMap;
 import java.util.Map;
 
-interface HasIndex {
-  public int getIndex();
-}
-
 class EnumEnhancer<E extends Enum<E> & HasIndex> {
   private Map<Integer, E> lookup;
 

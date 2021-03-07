@@ -1,4 +1,5 @@
 package colorcoder;
+
 public enum MajorColor implements HasIndex {
 	
     WHITE(0,"White"),
